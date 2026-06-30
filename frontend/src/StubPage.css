@@ -1,0 +1,37 @@
+.stub-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.stub-band {
+  position: relative;
+  width: 100%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  padding-left: 1.5rem;
+  overflow: hidden;
+}
+
+.stub-band-graphic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.stub-band-title {
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
+  font-weight: 700;
+  margin: 0;
+}
+
+.stub-content {
+  padding: 2rem 1.5rem;
+}

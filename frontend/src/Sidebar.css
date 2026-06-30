@@ -1,0 +1,109 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  border-right: 1px solid #eef0f2;
+  padding: 1.25rem 0;
+  z-index: 100;
+}
+
+.sidebar-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.sidebar-icon-btn {
+  background: none;
+  border: none;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.sidebar-icon-btn:hover {
+  background-color: #f1f5f9;
+}
+
+.sidebar-icon-btn:focus-visible {
+  outline: 2px solid #0474da;
+  outline-offset: 2px;
+}
+
+.sidebar-divider {
+  width: 22px;
+  height: 1px;
+  background-color: #e3e6e9;
+  margin: 0.25rem 0;
+}
+
+.sidebar-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Pages using the sidebar need their main content shifted right by the
+   sidebar's width -- add this class to the page's outermost wrapper. */
+.with-sidebar {
+  margin-left: 48px;
+}
+
+@media (max-width: 767px) {
+  .sidebar {
+    /* Flip from a left column to a bottom row entirely -- same
+       component, just re-oriented via this single breakpoint. */
+    flex-direction: row;
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 56px;
+    justify-content: space-evenly;
+    border-right: none;
+    border-top: 1px solid #eef0f2;
+    padding: 0;
+  }
+
+  .sidebar-top {
+    flex-direction: row;
+    margin: 0;
+    gap: 0;
+    /* Becomes a row itself, sharing space evenly with the logout
+       button below via the parent's space-evenly -- this is what
+       lines all 4 icons up in one row like the screenshot. */
+    flex: 1;
+    justify-content: space-evenly;
+  }
+
+  .sidebar-divider {
+    /* A vertical line no longer reads correctly in a horizontal bar,
+       so it collapses to nothing rather than drawing a stray line. */
+    display: none;
+  }
+
+  .sidebar-bottom {
+    flex-direction: row;
+  }
+
+  /* Content now needs bottom clearance instead of left clearance,
+     since the bar moved from the left edge to the bottom edge. */
+  .with-sidebar {
+    margin-left: 0;
+    margin-bottom: 56px;
+  }
+}

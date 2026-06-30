@@ -1,0 +1,326 @@
+.listing-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  overflow-x: hidden;
+}
+
+.listing-band {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  overflow: hidden;
+  padding-bottom: 2.5rem;
+}
+
+.listing-band-graphic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.listing-band-header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 1.5rem 0 1.5rem;
+}
+
+.listing-band-logo {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  padding-top: 0.5rem;
+}
+
+.listing-band-logo svg {
+  width: 56px;
+  height: 50px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1;
+  padding: 0 0.5rem 0 0;
+  margin-right: 0.25rem;
+  cursor: pointer;
+}
+
+.listing-content {
+  position: relative;
+  z-index: 10;
+  background-color: #ffffff;
+  border-radius: 16px 16px 0 0;
+  margin: -1.5rem 1rem 0 1rem;
+  padding: 1.5rem 1.75rem 2rem;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.04);
+  flex: 1;
+}
+
+.listing-search-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  padding: 0.5rem 0.85rem;
+  max-width: 320px;
+  width: 100%;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+.listing-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.listing-table thead th {
+  text-align: left;
+  background-color: #eef4fb;
+  color: #5a5b5b;
+  font-weight: 600;
+  padding: 0.65rem 0.75rem;
+  white-space: nowrap;
+}
+
+.listing-table tbody td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #f0f1f2;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.project-name {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.project-dates {
+  font-size: 0.75rem;
+  color: #8a8f93;
+  margin-top: 0.15rem;
+}
+
+.empty-state {
+  text-align: center !important;
+  color: #8a8f93;
+  padding: 2.5rem 0 !important;
+  white-space: normal !important;
+}
+
+.status-badge {
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.status-registered { color: #5a5b5b; }
+.status-running { color: #0b5ed7; }
+.status-closed { color: #6c757d; }
+.status-cancelled { color: #dc3545; }
+
+.action-btns {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-action {
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.4rem 1.1rem;
+  border: 1.5px solid #0b5ed7;
+  background: none;
+  cursor: pointer;
+  white-space: nowrap;
+  min-width: 72px;
+  text-align: center;
+  line-height: 1.2;
+  text-decoration: none !important;
+  -webkit-text-decoration: none !important;
+}
+
+.btn-action:hover,
+.btn-action:focus,
+.btn-action:active,
+.btn-action:visited {
+  text-decoration: none !important;
+}
+
+.btn-action:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-start {
+  background-color: #0b5ed7;
+  border-color: #0b5ed7;
+  color: #fff;
+}
+
+.btn-start:hover:not(:disabled) {
+  background-color: #0a53be;
+}
+
+.btn-close-action {
+  background: none;
+  border-color: #0b5ed7;
+  color: #0b5ed7;
+}
+
+.btn-close-action:hover:not(:disabled) {
+  background-color: #eef4fb;
+}
+
+.btn-cancel {
+  background: none;
+  border-color: #0b5ed7;
+  color: #0b5ed7;
+}
+
+.btn-cancel:hover:not(:disabled) {
+  background-color: #eef4fb;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1.5rem;
+}
+
+.pagination button {
+  border: none;
+  background: none;
+  min-width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-size: 0.85rem;
+  cursor: pointer;
+  color: #5a5b5b;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #f1f5f9;
+}
+
+.pagination button.active {
+  background-color: #0b5ed7;
+  color: #fff;
+}
+
+.pagination button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.pagination-ellipsis {
+  color: #8a8f93;
+  padding: 0 0.2rem;
+}
+
+/* Default (desktop/tablet): table visible, cards hidden. The mobile
+   breakpoint below flips both of these. */
+.listing-cards {
+  display: none;
+}
+
+.project-card {
+  border: 1px solid #eef0f2;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.project-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.project-card .project-dates {
+  margin-bottom: 0.75rem;
+}
+
+.project-card-details {
+  font-size: 0.85rem;
+  color: #5a5b5b;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.project-card-details strong {
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.detail-dot {
+  margin: 0 0.4rem;
+  color: #ced4da;
+}
+
+.project-card .action-btns {
+  gap: 0.6rem;
+}
+
+.project-card .btn-action {
+  flex: 1;
+}
+
+@media (max-width: 767px) {
+  .listing-content {
+    margin: -1rem 0.5rem 0 0.5rem;
+    padding: 1.25rem 1rem 1.5rem;
+  }
+
+  .search-box {
+    max-width: 100%;
+  }
+
+  .listing-search-row {
+    justify-content: stretch;
+  }
+
+  /* The actual fix for "scrolling sideways": below this width, stop
+     rendering the table entirely and show the stacked cards instead.
+     A table's rows/columns can't reflow into a vertical layout no
+     matter how much CSS is applied to it -- swapping the whole markup
+     is the only way to get a scroll-down (not scroll-right) experience. */
+  .table-scroll {
+    display: none;
+  }
+
+  .listing-cards {
+    display: block;
+  }
+}

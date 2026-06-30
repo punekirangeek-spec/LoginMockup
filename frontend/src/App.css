@@ -1,0 +1,92 @@
+.container-fluid.main-bg {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.background-wrapper {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.background-wrapper .bg-graphic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.logo-section {
+  position: relative;
+  z-index: 10;
+  padding: 3rem 1rem 4.5rem 1rem !important;
+}
+
+.logo-section p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.form-card-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+  padding: 0 1rem 2rem 1rem;
+  margin-top: -60px;
+}
+
+.form-card {
+  width: 100%;
+  max-width: 400px;
+  background-color: #ffffff;
+  padding: 2rem !important;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.form-control {
+  border: 1px solid #ced4da !important;
+  box-shadow: none !important;
+  background-color: #ffffff;
+}
+
+.position-relative .form-control {
+  padding-right: 2.75rem;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+@media (max-width: 380px) {
+  .form-card {
+    padding: 1.5rem !important;
+  }
+
+  .form-card-container {
+    margin-top: -40px;
+  }
+}
+
+@media (min-width: 992px) {
+  .logo-section {
+    padding: 4.5rem 1rem 6rem 1rem !important;
+  }
+
+  .form-card-container {
+    margin-top: -80px;
+  }
+
+  .form-card {
+    max-width: 440px;
+    padding: 2.5rem !important;
+  }
+}
