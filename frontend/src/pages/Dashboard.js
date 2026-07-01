@@ -10,8 +10,9 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts';
-import { HeaderBackground, AppLogo } from './Icons';
-import Sidebar from './Sidebar';
+import { HeaderBackground, AppLogo } from '../components/Icons';
+import Sidebar from '../components/Sidebar';
+import { API_BASE_URL } from '../config';
 import './Dashboard.css';
 
 const STAT_CARDS = [
@@ -30,7 +31,7 @@ function Dashboard() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    fetch('http://127.0.0.1:5000/dashboard-stats')
+    fetch(`${API_BASE_URL}/dashboard-stats`)
       .then((res) => res.json())
       .then((data) => setStats(data))
       .catch(() => setError('Could not load dashboard stats. Is the server running?'))
@@ -45,6 +46,9 @@ function Dashboard() {
 
   const handleLogout = () => navigate('/');
 
+  // recharts needs a flat array of plain objects, one per bar-group --
+  // this is exactly the shape /dashboard-stats already returns, so no
+  // reshaping needed here.
   const chartData = stats ? stats.department_breakdown : [];
 
   return (

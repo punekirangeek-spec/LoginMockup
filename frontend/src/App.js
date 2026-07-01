@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import LoginPage from './LoginPage';
-import CreateProjectPage from './CreateProjectPage';
-import Dashboard from './Dashboard';
-import ProjectListing from './ProjectListing';
+import LoginPage from './pages/LoginPage';
+import CreateProjectPage from './pages/CreateProjectPage';
+import Dashboard from './pages/Dashboard';
+import ProjectListing from './pages/ProjectListing';
 
 function App() {
   return (

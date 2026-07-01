@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AppLogo, HeaderBackground } from './Icons';
-import Sidebar from './Sidebar';
+import { AppLogo, HeaderBackground } from '../components/Icons';
+import Sidebar from '../components/Sidebar';
+import { API_BASE_URL } from '../config';
 import "./CreateProjectPage.css";
 
 const DROPDOWN_FIELDS = [
@@ -47,7 +48,7 @@ function CreateProjectPage() {
   const [saving, setSaving] = useState(false);
 
   useEffect(() => {
-    fetch('http://127.0.0.1:5000/dropdown-options')
+    fetch(`${API_BASE_URL}/dropdown-options`)
       .then((res) => res.json())
       .then((data) => setOptions(data))
       .catch(() => setError('Could not load dropdown options. Is the server running?'))
@@ -76,7 +77,7 @@ function CreateProjectPage() {
 
     setSaving(true);
 
-    fetch('http://127.0.0.1:5000/projects', {
+    fetch(`${API_BASE_URL}/projects`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(form),

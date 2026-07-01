@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { HeaderBackground, AppLogo } from './Icons';
-import Sidebar from './Sidebar';
+import { HeaderBackground, AppLogo } from '../components/Icons';
+import Sidebar from '../components/Sidebar';
+import { API_BASE_URL } from '../config';
 import './ProjectListing.css';
 
 const STATUS_CLASS = {
@@ -38,7 +39,7 @@ function ProjectListing() {
     const params = new URLSearchParams({ page: targetPage });
     if (searchTerm) params.set('search', searchTerm);
 
-    fetch(`http://127.0.0.1:5000/projects?${params.toString()}`)
+    fetch(`${API_BASE_URL}/projects?${params.toString()}`)
       .then((res) => res.json())
       .then((data) => {
         setProjects(data.projects || []);
@@ -67,7 +68,7 @@ function ProjectListing() {
   const handleStatusChange = (projectId, newStatus) => {
     setUpdatingId(projectId);
 
-    fetch(`http://127.0.0.1:5000/projects/${projectId}/status`, {
+    fetch(`${API_BASE_URL}/projects/${projectId}/status`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ status: newStatus }),
