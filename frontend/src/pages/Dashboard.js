@@ -10,7 +10,8 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts';
-import { HeaderBackground, AppLogo } from '../components/Icons';
+import { AppLogo } from '../components/Icons';
+import { HeaderBackground } from '../components/BackgroundSVGs';
 import Sidebar from '../components/Sidebar';
 import { API_BASE_URL } from '../config';
 import './Dashboard.css';

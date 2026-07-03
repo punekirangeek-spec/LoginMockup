@@ -1,8 +1,12 @@
 import React from 'react';
-import { DashboardIcon, ProjectListIcon, PlusIcon, LogoutIcon } from './Icons';
+import { DashboardIcon, ProjectListIcon, PlusIcon, LogoutIcon } from './NavIcons';
 import './Sidebar.css';
 
-
+/**
+ * activePage: 'dashboard' | 'projects' | null
+ * onNavigate(page): called with 'dashboard' | 'projects' | 'create'
+ * onLogout(): called when the logout icon is clicked
+ */
 function Sidebar({ activePage, onNavigate, onLogout }) {
   return (
     <nav className="sidebar">

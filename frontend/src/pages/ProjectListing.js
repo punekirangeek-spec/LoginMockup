@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { HeaderBackground, AppLogo } from '../components/Icons';
+import { AppLogo } from '../components/Icons';
+import { HeaderBackground } from '../components/BackgroundSVGs';
 import Sidebar from '../components/Sidebar';
 import { API_BASE_URL } from '../config';
 import './ProjectListing.css';

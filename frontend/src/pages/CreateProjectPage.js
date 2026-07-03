@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AppLogo, HeaderBackground } from '../components/Icons';
+import { AppLogo } from '../components/Icons';
+import { HeaderBackground } from '../components/BackgroundSVGs';
 import Sidebar from '../components/Sidebar';
 import { API_BASE_URL } from '../config';
 import "./CreateProjectPage.css";

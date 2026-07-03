@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AppLogo, EyeSlashIcon, LoginBackground } from '../components/Icons';
+import { AppLogo, EyeSlashIcon } from '../components/Icons';
+import { LoginBackground } from '../components/BackgroundSVGs';
 import { API_BASE_URL } from '../config';
 import "../App.css";
 
