@@ -51,7 +51,7 @@ function CreateProjectPage() {
     fetch(`${API_BASE_URL}/dropdown-options`)
       .then((res) => res.json())
       .then((data) => setOptions(data))
-      .catch(() => setError('Could not load dropdown options. Is the server running?'))
+      .catch(() => setError('Failed to connect to the server. Please try again.'))
       .finally(() => setOptionsLoading(false));
   }, []);
 
@@ -90,7 +90,7 @@ function CreateProjectPage() {
           navigate('/projects');
         }
       })
-      .catch(() => setError('Failed to connect to server.'))
+      .catch(() => setError('Failed to connect to the server. Please try again.'))
       .finally(() => setSaving(false));
   };
 

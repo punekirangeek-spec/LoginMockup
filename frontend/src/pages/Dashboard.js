@@ -34,7 +34,7 @@ function Dashboard() {
     fetch(`${API_BASE_URL}/dashboard-stats`)
       .then((res) => res.json())
       .then((data) => setStats(data))
-      .catch(() => setError('Could not load dashboard stats. Is the server running?'))
+      .catch(() => setError('Failed to connect to the server. Please try again.'))
       .finally(() => setLoading(false));
   }, []);
 

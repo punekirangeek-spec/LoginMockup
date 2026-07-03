@@ -45,8 +45,8 @@ function LoginPage() {
         }
       })
       .catch((err) => {
-        console.error("Network error:", err);
-        setError("Failed to connect to server.");
+        console.error('Network error:', err);
+        setError('Failed to connect to the server. Please try again.');
       });
   };
 

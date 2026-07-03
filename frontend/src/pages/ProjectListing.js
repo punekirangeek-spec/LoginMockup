@@ -45,7 +45,7 @@ function ProjectListing() {
         setProjects(data.projects || []);
         setTotalPages(data.total_pages || 1);
       })
-      .catch(() => setError('Could not load projects. Is the server running?'))
+      .catch(() => setError('Failed to connect to the server. Please try again.'))
       .finally(() => setLoading(false));
   }, []);
 
@@ -83,7 +83,7 @@ function ProjectListing() {
           prev.map((p) => (p.id === projectId ? { ...p, status: newStatus } : p))
         );
       })
-      .catch(() => setError('Failed to connect to server.'))
+      .catch(() => setError('Failed to connect to the server. Please try again.'))
       .finally(() => setUpdatingId(null));
   };
 
