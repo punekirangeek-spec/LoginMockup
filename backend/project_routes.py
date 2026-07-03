@@ -2,6 +2,9 @@ from flask import Blueprint, request, jsonify
 from database import get_db
 import psycopg2.extras
 from datetime import datetime
+import logging
+
+logger = logging.getLogger(__name__)
 
 project_api = Blueprint('project_api', __name__)
 
@@ -107,8 +110,10 @@ def create_project():
         )
         new_project = cur.fetchone()
         conn.commit()
+        logger.info(f'Project created: id={new_project["id"]} name="{name}"')
     except Exception as e:
         conn.rollback()
+        logger.error(f'Failed to create project "{name}": {e}')
         return jsonify({'error': 'Failed to save project'}), 500
     finally:
         cur.close()
@@ -208,8 +213,10 @@ def update_project_status(project_id):
     conn.close()
 
     if not updated:
+        logger.warning(f'Status update failed — project not found: id={project_id}')
         return jsonify({'error': 'Project not found'}), 404
 
+    logger.info(f'Project status updated: id={project_id} status="{new_status}"')
     return jsonify(updated), 200
 
 
